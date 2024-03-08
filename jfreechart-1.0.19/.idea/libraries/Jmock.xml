@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Jmock">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Jmock/jmock-junit4-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Jmock/jmock-script-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Jmock/jmock-legacy-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Jmock/jmock-junit3-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Jmock/jmock-2.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
