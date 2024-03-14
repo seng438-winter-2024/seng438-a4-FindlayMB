@@ -300,7 +300,7 @@ public class TimeSeriesCollectionTest {
         assertEquals(0, dataset.indexOf(s2b));
     }
 
-    private static final double EPSILON = 0.0000000001;
+    private static final double EPSILON = 0.000000001d;
 
     /**
      * This method provides a check for the bounds calculated using the
