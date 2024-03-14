@@ -29,7 +29,7 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeWithin() {
-        assertEquals("Range [-2, 2] expanded to a range of [-2, 2]",
+        assertEquals("Range [-2, 0] expanded to a range of [-2, 0]",
         		range1, Range.expandToInclude(range1, 0));
     }
     
@@ -40,8 +40,8 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeDown() {
-        assertEquals("Range [-2, 2] expanded to a range of [-5, 2]",
-        		range1, Range.expandToInclude(range1, -5));
+        assertEquals("Range [-2, 0] expanded to a range of [-5, 0]",
+        		new Range(-5, 0), Range.expandToInclude(range1, -5));
     }
 
     /**
@@ -51,8 +51,8 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeUp() {
-        assertEquals("Range [-2, 2] expanded to a range of [-2, 5]",
-        		range1, Range.expandToInclude(range1, 5));
+        assertEquals("Range [-2, 0] expanded to a range of [-2, 5]",
+        		new Range(-2, 5), Range.expandToInclude(range1, 5));
     }
     
     /**
@@ -74,7 +74,7 @@ public class ExpandToIncludeTests {
     @Test
     public void expandToInclude_ExpandRangeIsLB() {
         assertEquals("Range [-2, 2] expanded to a range of [-2, 2]",
-        		range1, Range.expandToInclude(range1, -2));
+        		new Range(-2, 2), Range.expandToInclude(new Range(0, 2), -2));
     }
     
     /**
@@ -85,6 +85,6 @@ public class ExpandToIncludeTests {
     @Test
     public void expandToInclude_ExpandRangeIsUB() {
         assertEquals("Range [-2, 2] expanded to a range of [-2, 2]",
-        		range1, Range.expandToInclude(range1, 2));
+        		new Range(-2, 2), Range.expandToInclude(range1, 2));
     }
 }
