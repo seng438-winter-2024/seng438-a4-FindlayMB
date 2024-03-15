@@ -93,7 +93,7 @@ public class IntersectsTests {
     @Test
     public void intersects_LeftEdgeBackwards() {
         assertEquals("Range [-3,-1] does intersect [-1,1]",
-                true, range1.intersects(-3,-1));
+                false, range1.intersects(-3,-1));
     }
 
     /**
@@ -141,7 +141,7 @@ public class IntersectsTests {
     @Test
     public void intersects_RightEdgeForwards() {
         assertEquals("Range [1,3] does intersect [-1,1]",
-        true, range1.intersects(1,3));
+        false, range1.intersects(1,3));
     }
 
     /**

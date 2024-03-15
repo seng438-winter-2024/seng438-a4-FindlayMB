@@ -148,6 +148,7 @@ public abstract class DataUtilities {
     public static double calculateColumnTotal(Values2D data, int column,
              int[] validRows) {
         ParamChecks.nullNotPermitted(data, "data");
+        ParamChecks.nullNotPermitted(validRows, "validRows");
         double total = 0.0;
         int rowCount = data.getRowCount();
         for (int v = 0; v < validRows.length; v++) {
@@ -199,6 +200,7 @@ public abstract class DataUtilities {
     public static double calculateRowTotal(Values2D data, int row,
              int[] validCols) {
         ParamChecks.nullNotPermitted(data, "data");
+        ParamChecks.nullNotPermitted(validCols, "validCols");
         double total = 0.0;
         int colCount = data.getColumnCount();
         for (int v = 0; v < validCols.length; v++) {
