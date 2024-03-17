@@ -7,8 +7,6 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import java.security.InvalidParameterException;
-
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         IntersectsTests.class,
@@ -22,7 +20,9 @@ import java.security.InvalidParameterException;
         ScaleTests.class,
         ShiftTests.class,
         EqualsTests.class,
-        IsNaNRangeTests.class})
+        IsNaNRangeTests.class,
+        ToStringTests.class
+        })
 public class RangeTestStudent {
     @Rule
     public ExpectedException exceptionRule = ExpectedException.none();

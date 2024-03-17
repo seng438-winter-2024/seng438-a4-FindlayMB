@@ -154,12 +154,12 @@ public strictfp class Range implements Serializable {
      * @return A boolean.
      */
     public boolean intersects(double b0, double b1) {
-        if (b0 <= this.lower) {
-            return (b1 > this.lower);
+        if (b0 > b1) {
+            return false;
         }
-        else {
-            return (b0 < this.upper && b1 >= b0);
-        }
+
+        // Check for intersection
+        return (b0 <= this.upper && b1 >= this.lower);
     }
 
     /**
