@@ -159,6 +159,8 @@ public strictfp class Range implements Serializable {
         }
         else {
             return (b0 < this.upper && b1 >= b0);
+       
+
         }
     }
 
@@ -186,14 +188,13 @@ public strictfp class Range implements Serializable {
      */
     public double constrain(double value) {
         double result = value;
-        if (!contains(value)) {
+        if (!contains(value))
             if (value > this.upper) {
                 result = this.upper;
             }
             else if (value < this.lower) {
                 result = this.lower;
             }
-        }
         return result;
     }
 
