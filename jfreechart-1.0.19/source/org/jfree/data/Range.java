@@ -302,15 +302,11 @@ public strictfp class Range implements Serializable {
         if (range == null) {
             return new Range(value, value);
         }
-        if (value < range.getLowerBound()) {
-            return new Range(value, range.getUpperBound());
-        }
-        else if (value > range.getUpperBound()) {
-            return new Range(range.getLowerBound(), value);
-        }
-        else {
-            return range;
-        }
+
+        double newLowerBound = Math.min(range.lower, value);
+        double newUpperBound = Math.max(range.upper, value);
+
+        return new Range(newLowerBound, newUpperBound);
     }
 
     /**
