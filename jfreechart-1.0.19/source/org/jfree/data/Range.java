@@ -185,16 +185,7 @@ public strictfp class Range implements Serializable {
      * @return The constrained value.
      */
     public double constrain(double value) {
-        double result = value;
-        if (!contains(value)) {
-            if (value > this.upper) {
-                result = this.upper;
-            }
-            else if (value < this.lower) {
-                result = this.lower;
-            }
-        }
-        return result;
+    	return Math.max(this.lower, Math.min(this.upper, value));
     }
 
     /**
