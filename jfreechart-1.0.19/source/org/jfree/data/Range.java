@@ -303,8 +303,8 @@ public strictfp class Range implements Serializable {
             return new Range(value, value);
         }
 
-        double newLowerBound = Math.min(range.lower, value);
-        double newUpperBound = Math.max(range.upper, value);
+        double newLowerBound = Math.min(range.getLowerBound(), value);
+        double newUpperBound = Math.max(range.getUpperBound(), value);
 
         return new Range(newLowerBound, newUpperBound);
     }
@@ -323,14 +323,16 @@ public strictfp class Range implements Serializable {
     public static Range expand(Range range,
                                double lowerMargin, double upperMargin) {
         ParamChecks.nullNotPermitted(range, "range");
-        double length = range.getLength();
-        double lower = range.getLowerBound() - length * lowerMargin;
-        double upper = range.getUpperBound() + length * upperMargin;
-        if (lower > upper) {
-            lower = lower / 2.0 + upper / 2.0;
-            upper = lower;
-        }
-        return new Range(lower, upper);
+        // Calculate margins
+        double rangeLength = range.getLength();
+        double lowerMarginValue = rangeLength * lowerMargin;
+        double upperMarginValue = rangeLength * upperMargin;
+
+        // Expand range
+        double newLowerBound = range.getLowerBound() - lowerMarginValue;
+        double newUpperBound = range.getUpperBound() + upperMarginValue;
+
+        return new Range(newLowerBound, newUpperBound);
     }
 
     /**
