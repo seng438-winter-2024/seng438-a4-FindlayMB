@@ -1,0 +1,481 @@
+{
+  "id": "7607f7fd-8916-4332-8063-f85d1600d11f",
+  "version": "2.0",
+  "name": "assi4",
+  "url": "https://www.ebay.ca/",
+  "tests": [{
+    "id": "8f8e6b1d-7207-45f3-a1d9-b467b0674fcf",
+    "name": "RegisterInvalidEmail",
+    "commands": [{
+      "id": "197ec83d-f048-49d0-8f3c-89ec94d73047",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "522e4315-0a21-4d85-a7fc-a72904fc7413",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c82d8e0c-b504-4e09-a9b1-3b21ec8965d0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=register",
+      "targets": [
+        ["linkText=register", "linkText"],
+        ["css=#gh-ug-flex > a", "css:finder"],
+        ["xpath=//a[contains(text(),'register')]", "xpath:link"],
+        ["xpath=//span[@id='gh-ug-flex']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://signup.ebay.ca/pa/crte?ru=https%3A%2F%2Fwww.ebay.ca%2F')]", "xpath:href"],
+        ["xpath=//span/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4da9037e-e1d2-4792-9ad2-b25dbc3a0904",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstname",
+      "targets": [
+        ["id=firstname", "id"],
+        ["name=firstname", "name"],
+        ["css=#firstname", "css:finder"],
+        ["xpath=//input[@id='firstname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bbbe6f7-2506-4000-a985-1d3922cf05fa",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstname",
+      "targets": [
+        ["id=firstname", "id"],
+        ["name=firstname", "name"],
+        ["css=#firstname", "css:finder"],
+        ["xpath=//input[@id='firstname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//span/span/input", "xpath:position"]
+      ],
+      "value": "Sarah"
+    }, {
+      "id": "a2d83c4c-6048-4fc1-a834-69266a8d45a4",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastname",
+      "targets": [
+        ["id=lastname", "id"],
+        ["name=lastname", "name"],
+        ["css=#lastname", "css:finder"],
+        ["xpath=//input[@id='lastname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div[2]/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span/input", "xpath:position"]
+      ],
+      "value": "Qin"
+    }, {
+      "id": "83c82305-ef0b-4fb6-a3f1-17343ec1d8a7",
+      "comment": "",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[@id='search-container']/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/span/span/span/input", "xpath:position"]
+      ],
+      "value": "qin.86@hotmai.com"
+    }, {
+      "id": "2379e9b6-42d1-4ad8-977a-83f5d2775b2f",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div[4]/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[4]/span/span/span/input", "xpath:position"]
+      ],
+      "value": "@Hi12345"
+    }]
+  }, {
+    "id": "44593a61-ec06-4332-b896-74b585c13ecf",
+    "name": "RegisterValidEmail",
+    "commands": [{
+      "id": "b1f0b79b-b16b-40dc-bcc8-75f762460028",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c44da326-0993-4ded-b0c5-9ed5f85d1cca",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd3bbd87-d9eb-43dd-9276-079aeb14d5b8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=register",
+      "targets": [
+        ["linkText=register", "linkText"],
+        ["css=#gh-ug-flex > a", "css:finder"],
+        ["xpath=//a[contains(text(),'register')]", "xpath:link"],
+        ["xpath=//span[@id='gh-ug-flex']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://signup.ebay.ca/pa/crte?ru=https%3A%2F%2Fwww.ebay.ca%2F')]", "xpath:href"],
+        ["xpath=//span/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce18f27e-66bd-4761-b764-2cf66e8eface",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstname",
+      "targets": [
+        ["id=firstname", "id"],
+        ["name=firstname", "name"],
+        ["css=#firstname", "css:finder"],
+        ["xpath=//input[@id='firstname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//span/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab7b4843-3f80-42ac-a8c6-26d7e70a1c10",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstname",
+      "targets": [
+        ["id=firstname", "id"],
+        ["name=firstname", "name"],
+        ["css=#firstname", "css:finder"],
+        ["xpath=//input[@id='firstname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//span/span/input", "xpath:position"]
+      ],
+      "value": "Sarah"
+    }, {
+      "id": "fe38b385-65b5-4729-8a6f-73638602c492",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastname",
+      "targets": [
+        ["id=lastname", "id"],
+        ["name=lastname", "name"],
+        ["css=#lastname", "css:finder"],
+        ["xpath=//input[@id='lastname']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div[2]/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span/input", "xpath:position"]
+      ],
+      "value": "Qin"
+    }, {
+      "id": "a3cfa566-0d60-404d-88e0-7b631a1aafa1",
+      "comment": "",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div[@id='search-container']/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/span/span/span/input", "xpath:position"]
+      ],
+      "value": "qin.86@hotmail.com"
+    }, {
+      "id": "2733acd8-74ad-4063-9ac0-a9a2a983650f",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div[4]/span/span/span/input", "xpath:idRelative"],
+        ["xpath=//div[4]/span/span/span/input", "xpath:position"]
+      ],
+      "value": "@Hi123456"
+    }, {
+      "id": "1414f57c-6427-4c67-9023-de329ee38312",
+      "comment": "",
+      "command": "click",
+      "target": "id=EMAIL_REG_FORM_SUBMIT",
+      "targets": [
+        ["id=EMAIL_REG_FORM_SUBMIT", "id"],
+        ["name=EMAIL_REG_FORM_SUBMIT", "name"],
+        ["css=#EMAIL_REG_FORM_SUBMIT", "css:finder"],
+        ["xpath=//button[@id='EMAIL_REG_FORM_SUBMIT']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[3]/div[2]/div[2]/div/div/form/div[6]/div/span/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Create personal account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "be1c0ed2-2280-4a66-a766-eb2f3ca086e9",
+    "name": "AddToCartZeroQuantity",
+    "commands": [{
+      "id": "6f1f00ef-2fc8-44e1-9199-ee33ce211c1b",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "77d9de33-1a8f-4901-94cd-7c3904baee99",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c973e92d-b8c9-4310-bc3a-f3cefe0cea04",
+      "comment": "",
+      "command": "click",
+      "target": "css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame",
+      "targets": [
+        ["css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame", "css:finder"],
+        ["xpath=//ul[@id='s0-1-0-47-1-3-5-10-0[2]-2-@match-media-0-@ebay-carousel-list']/li/div/a/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/ul/li/div/a/div/div/div", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7968",
+      "windowTimeout": 2000
+    }, {
+      "id": "ffe55e45-fc28-468b-8b06-26e01a5b816b",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7968}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2527ec9-ac4d-4edb-baae-dd33f5c06351",
+      "comment": "",
+      "command": "click",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59e6fc64-6ffe-435c-8139-ecc5b0a3ee62",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "df8dc5d3-e592-4cac-a81c-1618313f00df",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Add to cart",
+      "targets": [
+        ["linkText=Add to cart", "linkText"],
+        ["css=.x-atc-action > .ux-call-to-action", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div[2]/div/div/div[2]/ul/li[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://cart.payments.ebay.ca/sc/add')]", "xpath:href"],
+        ["xpath=//li[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2517470b-d653-4ca8-a0ef-9a52d3c7d3a9",
+    "name": "AddToCartOneQuantity",
+    "commands": [{
+      "id": "7e2a6f5c-c7f6-49bc-bf79-bb1f6a6a32d8",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0dd3e6dc-d6dc-4a11-9a04-59d145f9cde7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "168dff19-1bc7-49b8-9409-dedafaa7d3c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame",
+      "targets": [
+        ["css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame", "css:finder"],
+        ["xpath=//ul[@id='s0-1-0-47-1-3-5-10-0[2]-2-@match-media-0-@ebay-carousel-list']/li/div/a/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/ul/li/div/a/div/div/div", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7968",
+      "windowTimeout": 2000
+    }, {
+      "id": "1deae61a-b014-4359-b56b-9bf07471a13e",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7968}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b6d5281e-0173-47c9-872b-72516a4630e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f8ef894-09c1-4a53-b12f-8b8f7fa7ba72",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "32d1fced-43c6-4192-815b-041b9ca70ca7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Add to cart",
+      "targets": [
+        ["linkText=Add to cart", "linkText"],
+        ["css=.x-atc-action > .ux-call-to-action", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div[2]/div/div/div[2]/ul/li[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://cart.payments.ebay.ca/sc/add')]", "xpath:href"],
+        ["xpath=//li[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "3d2e8652-b673-444a-9788-7cf0fc6168a7",
+    "name": "AddToCartAlreadyInCart",
+    "commands": [{
+      "id": "0e2ef17e-810a-427e-91a4-a504df455a86",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e604182c-6f01-43bc-8fd2-199b66d862e0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89881cdb-7558-4fd6-bf75-6c331ad1913f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame",
+      "targets": [
+        ["css=#s0-1-0-47-1-3-5-10-0\\[2\\]-2-\\@match-media-0-\\@ebay-carousel-list > .carousel__snap-point .vlp-merch-image-frame", "css:finder"],
+        ["xpath=//ul[@id='s0-1-0-47-1-3-5-10-0[2]-2-@match-media-0-@ebay-carousel-list']/li/div/a/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/ul/li/div/a/div/div/div", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7968",
+      "windowTimeout": 2000
+    }, {
+      "id": "1ac43888-ab68-469c-96f6-0934cc75e2d5",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7968}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e26d928-7e10-43f4-b1f3-c989a82862eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a20e181-23d6-4aef-afc1-6dace75feca1",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[4]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "760f9e69-b5e6-4b20-822a-bb9bcfc2f318",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View in cart",
+      "targets": [
+        ["linkText=Add to cart", "linkText"],
+        ["css=.x-atc-action > .ux-call-to-action", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div[2]/div/div/div[2]/ul/li[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://cart.payments.ebay.ca/sc/add')]", "xpath:href"],
+        ["xpath=//li[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "16a668ec-2ef1-4981-93ca-0e8ffe77e160",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.ebay.ca/", "https://www.ebay.ca/sl/prelist/suggest"],
+  "plugins": []
+}
