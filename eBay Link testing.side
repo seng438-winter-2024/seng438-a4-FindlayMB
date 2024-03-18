@@ -5,7 +5,7 @@
   "url": "https://www.ebay.ca/",
   "tests": [{
     "id": "e83a593d-b8c0-44b8-8f85-477d525b0c4c",
-    "name": "Announcements Page",
+    "name": "Announcements Page link",
     "commands": [{
       "id": "939be0f9-e2b6-4918-9ba1-1b323acac15e",
       "comment": "",
@@ -48,6 +48,52 @@
       "target": "css=.lia-node-header-title",
       "targets": [],
       "value": "Announcements"
+    }]
+  }, {
+    "id": "c8d47f06-0d52-49ed-89e0-83392aa14499",
+    "name": "Community Page link",
+    "commands": [{
+      "id": "e49d4c30-1ed7-4d67-a9f6-a2a735614b26",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f206fe2d-765c-4966-964b-5f7dcef8f4f9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f50126bc-e460-43f4-8df7-aeadf9f0b5eb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,118)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44fa0c2c-fc63-475d-ab74-5f31028199e5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Community",
+      "targets": [
+        ["linkText=Community", "linkText"],
+        ["css=.gf-li:nth-child(4) > .gf-bar-a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Community')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='gf-l']/li[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://community.ebay.ca/')])[5]", "xpath:href"],
+        ["xpath=//div[3]/table/tbody/tr/td/ul/li[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d14bbc6f-44b1-4eb7-a536-34e76adbee0e",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.lia-welcome > h2",
+      "targets": [],
+      "value": "Welcome to the eBay Community!"
     }]
   }],
   "suites": [{
