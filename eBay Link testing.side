@@ -1,0 +1,63 @@
+{
+  "id": "b789ca2a-b1ed-4caf-a0bf-f4609394b84e",
+  "version": "2.0",
+  "name": "eBay Link testing",
+  "url": "https://www.ebay.ca/",
+  "tests": [{
+    "id": "e83a593d-b8c0-44b8-8f85-477d525b0c4c",
+    "name": "Announcements Page",
+    "commands": [{
+      "id": "939be0f9-e2b6-4918-9ba1-1b323acac15e",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "899811ea-986d-4e84-b9e2-d9bf11a5d148",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a0c35b8-bda4-453b-b541-ed4127c63359",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,45)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c0d3f1fe-9418-4089-95ad-db73a7fc0c54",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Announcements",
+      "targets": [
+        ["linkText=Announcements", "linkText"],
+        ["css=.gf-li:nth-child(3) > .gf-bar-a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Announcements')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='gf-l']/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://announcements.ebay.ca/')]", "xpath:href"],
+        ["xpath=//div[3]/table/tbody/tr/td/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2085b7b-edbd-432e-a04d-be3b1acf9a96",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.lia-node-header-title",
+      "targets": [],
+      "value": "Announcements"
+    }]
+  }],
+  "suites": [{
+    "id": "e7c7a615-88f0-4fbe-8c05-c58565bfe404",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.ebay.ca/"],
+  "plugins": []
+}
