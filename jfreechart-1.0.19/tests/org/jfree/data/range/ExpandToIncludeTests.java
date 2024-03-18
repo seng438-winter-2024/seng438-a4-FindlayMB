@@ -1,24 +1,11 @@
 package org.jfree.data.range;
 
 import org.jfree.data.Range;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class ExpandToIncludeTests {
-    private Range range1;
-
-    @BeforeClass public static void setUpBeforeClass() throws Exception {
-    }
-
-    
-    @Before
-    public void setUp() throws Exception { 
-        // ranges to be used for testing
-    	range1 = new Range(-2, 0);
-    }
 
     // ****** next six tests cover the expandToInclude() function ****** //
 
@@ -29,8 +16,9 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeWithin() {
+    	Range range = new Range(-2, 0);
         assertEquals("Range [-2, 0] expanded to a range of [-2, 0]",
-        		range1, Range.expandToInclude(range1, 0));
+        		range, Range.expandToInclude(range, 0));
     }
     
     /**
@@ -40,8 +28,9 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeDown() {
+    	Range range = new Range(-2, 0);
         assertEquals("Range [-2, 0] expanded to a range of [-5, 0]",
-        		new Range(-5, 0), Range.expandToInclude(range1, -5));
+        		new Range(-5, 0), Range.expandToInclude(range, -5));
     }
 
     /**
@@ -51,8 +40,9 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeUp() {
+    	Range range = new Range(-2, 0);
         assertEquals("Range [-2, 0] expanded to a range of [-2, 5]",
-        		new Range(-2, 5), Range.expandToInclude(range1, 5));
+        		new Range(-2, 5), Range.expandToInclude(range, 5));
     }
     
     /**
@@ -84,7 +74,8 @@ public class ExpandToIncludeTests {
      */
     @Test
     public void expandToInclude_ExpandRangeIsUB() {
+    	Range range = new Range(-2, 0);
         assertEquals("Range [-2, 2] expanded to a range of [-2, 2]",
-        		new Range(-2, 2), Range.expandToInclude(range1, 2));
+        		new Range(-2, 2), Range.expandToInclude(range, 2));
     }
 }

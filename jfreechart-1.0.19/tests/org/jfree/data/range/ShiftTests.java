@@ -137,9 +137,20 @@ public class ShiftTests {
      * Expected outcome: returns a range of [1, 1]
      */
     @Test
-    public void rangeShiftBothBoundsAreZeroNoZeroCrossing() {
+    public void rangeShiftBothBoundsAreZeroNoZeroCrossingPositive() {
         assertEquals("Expected a range of [1, 1]",
                 new Range(1, 1), Range.shift(new Range(0, 0), 1));
+    }
+    
+    /**
+     * This test tests the shift function with an input of a range of [0, 0]
+     * and a delta of 1
+     * Expected outcome: returns a range of [1, 1]
+     */
+    @Test
+    public void rangeShiftBothBoundsAreZeroNoZeroCrossingNegative() {
+        assertEquals("Expected a range of [1, 1]",
+                new Range(-1, -1), Range.shift(new Range(0, 0), -1));
     }
 
 }

@@ -154,14 +154,12 @@ public strictfp class Range implements Serializable {
      * @return A boolean.
      */
     public boolean intersects(double b0, double b1) {
-        if (b0 <= this.lower) {
-            return (b1 > this.lower);
+        if (b0 > b1) {
+            return false;
         }
-        else {
-            return (b0 < this.upper && b1 >= b0);
-       
 
-        }
+        // Check for intersection
+        return (b0 <= this.upper && b1 >= this.lower);
     }
 
     /**
@@ -187,15 +185,7 @@ public strictfp class Range implements Serializable {
      * @return The constrained value.
      */
     public double constrain(double value) {
-        double result = value;
-        if (!contains(value))
-            if (value > this.upper) {
-                result = this.upper;
-            }
-            else if (value < this.lower) {
-                result = this.lower;
-            }
-        return result;
+    	return Math.max(this.lower, Math.min(this.upper, value));
     }
 
     /**
@@ -303,15 +293,11 @@ public strictfp class Range implements Serializable {
         if (range == null) {
             return new Range(value, value);
         }
-        if (value < range.getLowerBound()) {
-            return new Range(value, range.getUpperBound());
-        }
-        else if (value > range.getUpperBound()) {
-            return new Range(range.getLowerBound(), value);
-        }
-        else {
-            return range;
-        }
+
+        double newLowerBound = Math.min(range.getLowerBound(), value);
+        double newUpperBound = Math.max(range.getUpperBound(), value);
+
+        return new Range(newLowerBound, newUpperBound);
     }
 
     /**
@@ -328,14 +314,16 @@ public strictfp class Range implements Serializable {
     public static Range expand(Range range,
                                double lowerMargin, double upperMargin) {
         ParamChecks.nullNotPermitted(range, "range");
-        double length = range.getLength();
-        double lower = range.getLowerBound() - length * lowerMargin;
-        double upper = range.getUpperBound() + length * upperMargin;
-        if (lower > upper) {
-            lower = lower / 2.0 + upper / 2.0;
-            upper = lower;
-        }
-        return new Range(lower, upper);
+        // Calculate margins
+        double rangeLength = range.getLength();
+        double lowerMarginValue = rangeLength * lowerMargin;
+        double upperMarginValue = rangeLength * upperMargin;
+
+        // Expand range
+        double newLowerBound = range.getLowerBound() - lowerMarginValue;
+        double newUpperBound = range.getUpperBound() + upperMarginValue;
+
+        return new Range(newLowerBound, newUpperBound);
     }
 
     /**
