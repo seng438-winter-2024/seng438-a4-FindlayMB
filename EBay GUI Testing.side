@@ -10,14 +10,14 @@
       "id": "fb9becab-6442-41d5-82fd-0eb8eed024d0",
       "comment": "",
       "command": "open",
-      "target": "https://www.ebay.ca/",
+      "target": "https://signin.ebay.ca/ws/eBayISAPI.dll?SignIn&ru=https%3A%2F%2Fwww.ebay.ca%2F",
       "targets": [],
       "value": ""
     }, {
-      "id": "5d310ef1-5486-4981-aa70-8de3c60edef7",
+      "id": "184cf498-2220-4fa8-90bb-e1392186260c",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Sign in",
+      "command": "setWindowSize",
+      "target": "1900x1020",
       "targets": [],
       "value": ""
     }, {
@@ -75,14 +75,21 @@
     "id": "e27c713f-3111-426b-9bb0-af9896f7c9c7",
     "name": "testValidLogin",
     "commands": [{
-      "id": "0f773b32-a78a-471e-92c9-73e2f239a619",
+      "id": "ff6fdffe-d81d-4531-9adb-d738b41a2973",
       "comment": "",
       "command": "open",
       "target": "https://www.ebay.ca/",
       "targets": [],
       "value": ""
     }, {
-      "id": "413a592f-8fd8-495c-9855-011b38a8e474",
+      "id": "0d286849-083b-4d30-914f-e42b09c7ee41",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc3e9082-f6b3-4715-8bc8-e99581a13f6e",
       "comment": "",
       "command": "click",
       "target": "linkText=Sign in",
@@ -97,79 +104,7 @@
       ],
       "value": ""
     }, {
-      "id": "e70f761b-a6f0-4c27-a6cf-7bbc8123874b",
-      "comment": "",
-      "command": "click",
-      "target": "id=userid",
-      "targets": [
-        ["id=userid", "id"],
-        ["name=userid", "name"],
-        ["css=#userid", "css:finder"],
-        ["xpath=//input[@id='userid']", "xpath:attributes"],
-        ["xpath=//form[@id='signin-form']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "013a5369-8186-48e0-991a-ffb2b437825b",
-      "comment": "",
-      "command": "type",
-      "target": "id=userid",
-      "targets": [
-        ["id=userid", "id"],
-        ["name=userid", "name"],
-        ["css=#userid", "css:finder"],
-        ["xpath=//input[@id='userid']", "xpath:attributes"],
-        ["xpath=//form[@id='signin-form']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "fake.emailseng438@gmail.com"
-    }, {
-      "id": "66454340-5a84-4ce5-9ad0-9ddee6e5bf7a",
-      "comment": "",
-      "command": "click",
-      "target": "id=signin-continue-btn",
-      "targets": [
-        ["id=signin-continue-btn", "id"],
-        ["name=signin-continue-btn", "name"],
-        ["css=#signin-continue-btn", "css:finder"],
-        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
-        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "9b485b19-c3aa-4b95-bb2f-103ad5006f6b",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "id=signin-continue-btn",
-      "targets": [
-        ["id=signin-continue-btn", "id"],
-        ["name=signin-continue-btn", "name"],
-        ["css=#signin-continue-btn", "css:finder"],
-        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
-        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "cd127e60-695d-419d-876e-1cc08dadb8ea",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "id=signin-continue-btn",
-      "targets": [
-        ["id=signin-continue-btn", "id"],
-        ["name=signin-continue-btn", "name"],
-        ["css=#signin-continue-btn", "css:finder"],
-        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
-        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
-        ["xpath=//button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a19f22ac-7f09-4f60-8cef-edb316086d56",
+      "id": "fa790fd1-0af6-47f0-aadc-b8a5bdadc3dd",
       "comment": "",
       "command": "click",
       "target": "id=pass",
@@ -183,7 +118,7 @@
       ],
       "value": ""
     }, {
-      "id": "453bc388-58ac-4bb0-a384-06dff91934e1",
+      "id": "a23c292e-d79d-4f75-869f-d3b96290ea13",
       "comment": "",
       "command": "type",
       "target": "id=pass",
@@ -195,9 +130,9 @@
         ["xpath=//form[@id='signin-form']/div/div[3]/div/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "seng438!"
+      "value": "Nicos2003!"
     }, {
-      "id": "c62076de-5b12-46dc-9a3a-93dd9b3bc039",
+      "id": "403ffab6-77f3-4859-bc9d-b33a31ed8409",
       "comment": "",
       "command": "click",
       "target": "id=sgnBt",
@@ -212,7 +147,7 @@
       ],
       "value": ""
     }, {
-      "id": "ff0311d1-806b-46fa-9c1d-a1bc55cdc2dc",
+      "id": "5361bf10-4994-47fc-ad51-e413f32f501c",
       "comment": "",
       "command": "verifyText",
       "target": "id=gh-ug",
@@ -222,9 +157,9 @@
         ["xpath=//button[@id='gh-ug']", "xpath:attributes"],
         ["xpath=//li[@id='gh-eb-u']/button", "xpath:idRelative"],
         ["xpath=//li/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Hi Fake!')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'Hi Nicholas!')]", "xpath:innerText"]
       ],
-      "value": "Hi Fake!"
+      "value": "Hi Nicholas!"
     }]
   }, {
     "id": "84133e09-7395-4530-92eb-aed6b10ebd79",
@@ -234,6 +169,13 @@
       "comment": "",
       "command": "open",
       "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bca68676-f897-4819-ac5d-4b8690cacdc9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
       "targets": [],
       "value": ""
     }, {
@@ -286,6 +228,13 @@
       "comment": "",
       "command": "open",
       "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64b94167-8bda-4e4d-931b-6e5bcb798b66",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
       "targets": [],
       "value": ""
     }, {
@@ -360,6 +309,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "01f28aa3-7f98-44e2-b783-cf15c396802e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "66e3e30f-81fb-4522-86b5-283de12379fa",
       "comment": "",
       "command": "click",
@@ -428,6 +384,13 @@
       "comment": "",
       "command": "open",
       "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ea264b4-0693-4493-ae20-3a554af115d5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1900x1020",
       "targets": [],
       "value": ""
     }, {
