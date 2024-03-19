@@ -1,24 +1,12 @@
 package org.jfree.data.range;
 
 import org.jfree.data.Range;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class ConstrainTests {
-    private Range range1;
 
-    @BeforeClass public static void setUpBeforeClass() throws Exception {
-    }
-
-    
-    @Before
-    public void setUp() throws Exception { 
-        // ranges to be used for testing
-    	range1 = new Range(-1, 1);
-    }
 
     // ****** next five tests cover the constrain() function ****** //
 
@@ -29,8 +17,9 @@ public class ConstrainTests {
      */
     @Test
     public void constrain_InRange() {
+    	Range range = new Range(-1, 1);
         assertEquals("Expected 0",
-                0, range1.constrain(0),.000000001d);
+                0, range.constrain(0),.000000001d);
     }
 
     /**
@@ -40,8 +29,9 @@ public class ConstrainTests {
      */
     @Test
     public void constrain_UnderRange() {
-        assertEquals("Expected 1",
-                -1, range1.constrain(-5),.000000001d);
+    	Range range = new Range(-1, 1);
+        assertEquals("Expected -1",
+                -1, range.constrain(-5),.000000001d);
     }
     
     /**
@@ -51,8 +41,9 @@ public class ConstrainTests {
      */
     @Test
     public void constrain_OverRange() {
+    	Range range = new Range(-1, 1);
         assertEquals("Expected 1",
-                1, range1.constrain(5),.000000001d);
+                1, range.constrain(5),.000000001d);
     }
     
     /**
@@ -62,8 +53,9 @@ public class ConstrainTests {
      */
     @Test
     public void constrain_IsLowerBound() {
-        assertEquals("Expected 1",
-                -1, range1.constrain(-1),.000000001d);
+    	Range range = new Range(-1, 1);
+        assertEquals("Expected -1",
+                -1, range.constrain(-1),.000000001d);
     }
     
     /**
@@ -73,7 +65,19 @@ public class ConstrainTests {
      */
     @Test
     public void constrain_IsUpperBound() {
+    	Range range = new Range(-1, 1);
         assertEquals("Expected 1",
-                1, range1.constrain(1),.000000001d);
+                1, range.constrain(1),.000000001d);
     }
+    
+    @Test
+    public void constrain_DifferentRange() {
+    	Range range2 = new Range(10, 100);
+    	assertEquals("Expected 10",
+                10, range2.constrain(5),.000000001d);
+    }
+    
+    
+  
+    
 }

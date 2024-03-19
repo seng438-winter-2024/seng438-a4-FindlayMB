@@ -2,25 +2,11 @@ package org.jfree.data.range;
 
 import org.jfree.data.Range;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class IntersectsTests {
-    private Range range1;
-    private Range range2;
-
-    @BeforeClass public static void setUpBeforeClass() throws Exception {
-    }
-
-    
-    @Before
-    public void setUp() throws Exception { 
-        // ranges to be used for testing
-    	range1 = new Range(-1, 1);
-    	range2 = new Range(1, 10);
-    }
 
     // ****** next ten tests cover the intersects() function ****** //
 
@@ -32,8 +18,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_FalseLeftTest() {
-        assertEquals("Range [-3,-2] does not intersect [-1,1]",
-                false, range1.intersects(-3,-2));
+    	Range range = new Range(-1,1);
+        assertFalse("Range [-3,-2] does not intersect [-1,1]",
+               range.intersects(-3,-2));
     }
 
     /**
@@ -44,8 +31,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_Left() {
-        assertEquals("Range [-1, 5] does intersect [1, 10]",
-                true, range2.intersects(-1, 5));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [-1, 5] does intersect [1, 10]",
+                range.intersects(-1, 5));
     }
 
     /**
@@ -56,8 +44,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_Encapsulation() {
-        assertEquals("Range [2, 5] does intersect [1, 10]",
-                true, range2.intersects(2, 5));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [2, 5] does intersect [1, 10]",
+                range.intersects(2, 5));
     }
 
     /**
@@ -68,8 +57,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_Right() {
-        assertEquals("Range [2, 11] does intersect [1, 10]",
-                true, range2.intersects(2, 11));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [2, 11] does intersect [1, 10]",
+                range.intersects(2, 11));
     }
 
     /**
@@ -80,8 +70,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_FalseRightTest() {
-        assertEquals("Range [2,3] does not intersect [-1,1]",
-                false, range1.intersects(2,3));
+    	Range range = new Range(-1, 1);
+        assertFalse("Range [2,3] does not intersect [-1,1]",
+                range.intersects(2,3));
     }
 
     /**
@@ -92,8 +83,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_LeftEdgeBackwards() {
-        assertEquals("Range [-3,-1] does intersect [-1,1]",
-                true, range1.intersects(-3,-1));
+    	Range range = new Range(-1, 1);
+        assertTrue("Range [-3,-1] does intersect [-1,1]",
+                range.intersects(-3,-1));
     }
 
     /**
@@ -104,8 +96,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_LeftEdgeForward() {
-        assertEquals("Range [1, 5] does intersect [1, 10]",
-                true, range2.intersects(1, 5));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [1, 5] does intersect [1, 10]",
+               range.intersects(1, 5));
     }
 
     /**
@@ -116,8 +109,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_Self() {
-        assertEquals("Range [1, 10] does intersect [1, 10]",
-                true, range2.intersects(1, 10));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [1, 10] does intersect [1, 10]",
+                range.intersects(1, 10));
     }
 
     /**
@@ -128,8 +122,9 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_RightEdgeBackward() {
-        assertEquals("Range [2, 10] does intersect [1, 10]",
-                true, range2.intersects(2, 10));
+    	Range range = new Range(1, 10);
+        assertTrue("Range [2, 10] does intersect [1, 10]",
+                range.intersects(2, 10));
     }    
 
     /**
@@ -140,35 +135,61 @@ public class IntersectsTests {
      */
     @Test
     public void intersects_RightEdgeForwards() {
-        assertEquals("Range [1,3] does intersect [-1,1]",
-        true, range1.intersects(1,3));
+    	Range range = new Range(-1, 1);
+        assertTrue("Range [1,3] does intersect [-1,1]",
+        		range.intersects(1, 3));
     }
 
     /**
      * This test tests intersects(Range) function
-     * with  does Range[2,3] intersect with [-1,1]
-     * test case: lower = UB and upper > UB
-     * Expected outcome: true
+     * with does Range[2,3] intersect with [-1,1]
+     * Expected outcome: false
      */
     @Test
     public void intersectsRange() {
         Range test = new Range(2,3);
-        assertEquals("Range [2,3] does not intersect [-1,1]",
-                false, range1.intersects(test));
+        Range range = new Range(-1, 1);
+        assertFalse("Range [2,3] does not intersect [-1,1]",
+                range.intersects(test));
+    }
+    
+    /**
+     * This test tests intersects(Range) function
+     * with  does Range[1,3] intersect with [-1,1]
+     * Expected outcome: true
+     */
+    @Test
+    public void doesNotIntersectsRange() {
+        Range test = new Range(1,3);
+        Range range = new Range(-1, 1);
+        assertTrue("Range [1,3] does intersect [-1,1]",
+                range.intersects(test));
     }
     
     
     /**
-     * This test tests intersects(Range) function
+     * This test tests intersects function
      * Range [0, -1] is an invalid range
      * test case: invalid range
      * Expected outcome: false
      */
     @Test
     public void  intersectsInvalidParameters() {
-    	assertEquals("Range [0, -1] is an invalid range",
-                false, range1.intersects(0, -1));
+    	Range range = new Range(-1, 1);
+    	assertFalse("Range [0, -1] is an invalid range",
+                range.intersects(0, -1));
     }
     
-
+    /**
+     * This test tests intersects function
+     * Range [1, 1] is a range with the same parameters
+     * test case: range parameters are the same
+     * Expected outcome: true
+     */
+    @Test
+    public void  intersectsParametersAreTheSame() {
+    	Range range = new Range(-1, 1);
+    	assertTrue("Range [1, 1] is a range where upper and lower are the same",
+                range.intersects(1, 1));
+    }
 }

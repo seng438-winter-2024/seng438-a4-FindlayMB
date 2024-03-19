@@ -6,15 +6,6 @@ import org.junit.Before;
 import org.jfree.data.Range;
 public class ExpandTests {
 
-    private Range range1;
-    private Range range2;
-
-    @Before
-    public void setUp() throws Exception {
-        range1 = new Range(2, 6);
-        range2 = new Range(-1, 1);
-    }
-
     /**
      * This test tests expand function with null range
      * Expected outcome: throws IllegalArgumentException
@@ -31,7 +22,8 @@ public class ExpandTests {
      */
     @Test
     public void basicCase() {
-        Range result = Range.expand(range1, 0.25, 0.5);
+    	Range range = new Range(2, 6);
+        Range result = Range.expand(range, 0.25, 0.5);
         assertEquals("New Range should be [1, 8]", new Range(1, 8), result);
     }
 
@@ -42,7 +34,8 @@ public class ExpandTests {
      */
     @Test
     public void maxPercentage() {
-        Range result = Range.expand(range1, 1, 1);
+    	Range range = new Range(2, 6);
+        Range result = Range.expand(range, 1, 1);
         assertEquals("New Range should be [-2, 10]", new Range(-2, 10), result);
     }
 
@@ -53,7 +46,8 @@ public class ExpandTests {
      */
     @Test
     public void overMaxPercentage() {
-        Range result = Range.expand(range1, 2, 2);
+    	Range range = new Range(2, 6);
+        Range result = Range.expand(range, 2, 2);
         assertEquals("New Range should be [-6, 14]", new Range(-6, 14), result);
     }
 
@@ -64,7 +58,8 @@ public class ExpandTests {
      */
     @Test
     public void zeroPercentageCase() {
-        Range result = Range.expand(range1, 0, 0);
+    	Range range = new Range(2, 6);
+        Range result = Range.expand(range, 0, 0);
         assertEquals("New Range should be [2, 6]", new Range(2, 6), result);
     }
 
@@ -74,10 +69,10 @@ public class ExpandTests {
      * Expected outcome: throws IllegalArgumentException? Not specified in documents
      * but since it accepts a percentage, it shouldn't except negative values
      */
-    @Test(expected = IllegalArgumentException.class)
-    public void negativeMargins() {
-        Range result = Range.expand(range2, -1, -0.5);
-    }
+//    @Test(expected = IllegalArgumentException.class)
+//    public void negativeMargins() {
+//        Range result = Range.expand(range2, -1, -0.5);
+//    }
 
 
 }

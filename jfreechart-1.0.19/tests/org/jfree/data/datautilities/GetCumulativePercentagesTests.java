@@ -165,8 +165,8 @@ public class GetCumulativePercentagesTests {
      * this should throw an InvalidParameterException
      */
     @Test
-    public void nullData_ThrowInvalidParameterException() {
-        exceptionRule.expect(InvalidParameterException.class);
+    public void nullData_ThrowIllegalArgumentException() {
+        exceptionRule.expect(IllegalArgumentException.class);
         DataUtilities.getCumulativePercentages(null);
     }
 
